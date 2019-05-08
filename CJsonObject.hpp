@@ -15,7 +15,7 @@
 #include <stddef.h>
 #include <malloc.h>
 #include <errno.h>
-#include <unistd.h>
+#include "unistd.h"
 #include <limits.h>
 #include <math.h>
 #include <float.h>
@@ -30,6 +30,9 @@ extern "C" {
 }
 #endif
 
+#if _MSC_VER
+#define snprintf _snprintf
+#endif
 
 namespace neb
 {
